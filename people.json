@@ -1,0 +1,9 @@
+[{
+    "name": "Stefan",
+    "alter": 21,
+    "hobbies": ["Tennis", "Angeln", "Schach"],
+    "adresse": {
+        "strasse": "Lilienstr.",
+        "plz": "81669"
+    }
+}]
