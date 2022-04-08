@@ -6,28 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+        #popupBackground {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            height: 50vh;
+            width: 50vw;
+            background-color: white;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
+    <button onclick="openPopup()">Popup öffnen</button>
+    <div id="popupBackground" onclick="closePopup()">
+        <div class="popup-content" onclick="doNotClose(event)">
+            <form action="#">
+                <input type="text">
+                <input type="text">
+                <button onclick="save()">Speichern</button>
+            </form>
+        </div>
+    </div>
     <script>
-        let contact1 = [{
-            "name": "Stefan",
-            "alter": 21,
-            "hobbies": ["Tennis", "Angeln", "Schach"],
-            "adresse": {
-                "strasse": "Lilienstr.",
-                "plz": "81669"
-            }
-        }, {
-            "name": "Steffi",
-            "alter": 27,
-            "hobbies": ["Tennis", "Angeln", "Schach"],
-            "adresse": {
-                "strasse": "Schwanthalerstr.",
-                "plz": "81669"
-            }
-        }];
-        console.log(contact1[1].adresse["strasse"]);
+        function openPopup(n, p) {
+            popupBackground.style.display = 'flex';
+        }
+
+        function closePopup() {
+            popupBackground.style.display = 'none';
+        }
+
+        function save() {}
+
+        function doNotClose(event) {
+            event.stopPropagation();
+        }
     </script>
 
 </body>
